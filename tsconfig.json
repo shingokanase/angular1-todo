@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    // ES6の型定義使いたい
+    "lib": [
+      "dom",
+      "es6"
+    ],
+    "module": "commonjs",
+    // node_modulesにインストールしたパッケージをインポートできるようにする
+    "moduleResolution": "node",
+    // 便利そうだけどいまいち理解しきれない
+    "allowSyntheticDefaultImports": true,
+    // 最初から有効にしないときつい
+    "strictNullChecks": true,
+    // 不明な型禁止
+    // "noImplicitAny": true,
+    // returnで返すすべての型を検査
+    "noImplicitReturns": true,
+    // 不明なthis禁止
+    "noImplicitThis": true,
+    // 使わないパラメータ禁止、プレースホルダはアンダースコアをプレフィクスに付ける
+    // "noUnusedParameters": true,
+    // 使わない変数禁止
+    // "noUnusedLocals": true,
+    // switchのcase句の貫通禁止(本文なしなら許可)
+    "noFallthroughCasesInSwitch": true,
+    // インデクスシグネチャのうざいエラー無視、たぶんこれでいい
+    "suppressImplicitAnyIndexErrors": true,
+    // ファイル名の命名規則を一貫させる
+    "forceConsistentCasingInFileNames": true,
+    "removeComments": true,
+    "sourceMap": true
+
+  },
+  "exclude": [
+    "node_modules"
+  ],
+    // filesはGlobパターン使えないオワコン
+  "include": [
+    "src/**/*.ts",
+    "test/**/*.ts"
+  ]
+}
