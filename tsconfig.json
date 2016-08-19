@@ -6,6 +6,8 @@
       "dom",
       "es6"
     ],
+    // TODO
+
     "module": "commonjs",
     // node_modulesにインストールしたパッケージをインポートできるようにする
     "moduleResolution": "node",

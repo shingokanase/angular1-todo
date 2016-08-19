@@ -1,8 +1,10 @@
 /// <reference path="../typings/index.d.ts" />
 "use strict";
 
-angular.module('app', ['ui.router']).config(($stateProvider, $urlRouterProvider) => {
+angular.module('app', ['ui.router'])
+  .config(["$stateProvider", "$urlRouterProvider", "$locationProvider", ($stateProvider, $urlRouterProvider, $locationProvider) => {
 
+  $locationProvider.html5Mode(true);
   $urlRouterProvider.otherwise("/");
 
   $stateProvider
@@ -10,7 +12,7 @@ angular.module('app', ['ui.router']).config(($stateProvider, $urlRouterProvider)
       abstract: true,
       url: 'todo',
       // views: 'topView'
-      templateUrl: './components/top/top.html'
+      template: 'test'
     });
 
-});
+}]);
