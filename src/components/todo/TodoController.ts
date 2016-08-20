@@ -2,15 +2,16 @@
 
 export class TodoController {
 
-  private str;
+  private todoItems;
 
   constructor(private $scope) {
-    this.str = "test";
     this.refresh()
   }
 
   private refresh() {
     console.log("refresh");
+
+    this.todoItems = ['あ', 'い', 'う', 'え', 'お'];
   }
 
   public click() {

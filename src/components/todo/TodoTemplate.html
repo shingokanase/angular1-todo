@@ -1,12 +1,21 @@
 <div>
-  <div class="row">
-    <div class="col-lg-6">
-      <div class="input-group">
-        <input type="text" class="form-control" required placeholder="Input" >
-        <span class="input-group-btn">
-          <button ng-model="todo" class="btn btn-default" type="button" ng-click="todo.click()">追加</button>
-        </span>
-      </div>
-    </div>
-  </div>
+
+  <div class="input-group">
+  <input type="text" class="form-control" placeholder="テキスト入力欄">
+  <span class="input-group-btn">
+    <button type="button" class="btn btn-default">Add</button>
+  </span>
+</div>
+
+<ul class="list-group">
+  <li ng-model="todo" class="list-group-item" ng-repeat="item in todo.todoItems">{{$index}} {{item}}</li>
+</ul>
+<div class="btn-group" ng-model="button.radio" bs-radio-group>
+  <label class="btn btn-default"><input type="radio" class="btn btn-default" value="0"> First</label>
+  <label class="btn btn-default"><input type="radio" class="btn btn-default" value="1"> Second</label>
+  <label class="btn btn-default"><input type="radio" class="btn btn-default" value="2"> Third</label>
+  <!-- Children get compiled by `bs-radio-group` to :
+  <label class="btn btn-default"><input type="radio" class="btn btn-default" value="left" ng-model="button.radio" bs-radio> Left</label>
+  ...
+  -->
 </div>

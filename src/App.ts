@@ -1,8 +1,9 @@
 /// <reference path="../typings/index.d.ts" />
 "use strict";
 
-angular.module('app', ['ui.router'])
-  .config(["$stateProvider", "$urlRouterProvider", "$locationProvider", ($stateProvider, $urlRouterProvider, $locationProvider) => {
+angular.module('app', ['ui.router','mgcrea.ngStrap'])
+  .config(["$stateProvider", "$urlRouterProvider", "$locationProvider",
+   ($stateProvider, $urlRouterProvider, $locationProvider) => {
 
   $locationProvider.html5Mode(true);
   $urlRouterProvider.otherwise("/");
