@@ -1,19 +1,26 @@
 <div>
 
   <div class="input-group">
-  <input type="text" class="form-control" placeholder="テキスト入力欄">
+  <input type="text" class="form-control" placeholder="テキスト入力欄" ng-model="todo.item">
   <span class="input-group-btn">
-    <button type="button" class="btn btn-default">Add</button>
+    <button type="button" class="btn btn-default" ng-click="todo.addItem('')">Add</button>
   </span>
 </div>
 
 <ul class="list-group">
-  <li ng-model="todo" class="list-group-item" ng-repeat="item in todo.todoItems">{{$index}} {{item}}</li>
+  <li ng-model="todo.todoItems" class="list-group-item" ng-repeat="item in todo.todoItems">{{item}}</li>
 </ul>
+<span class="badge large" ng-model="todo.todoItems">{{todo.todoItems.length}} items</span>
 <div class="btn-group" ng-model="button.radio" bs-radio-group>
-  <label class="btn btn-default"><input type="radio" class="btn btn-default" value="0"> First</label>
-  <label class="btn btn-default"><input type="radio" class="btn btn-default" value="1"> Second</label>
-  <label class="btn btn-default"><input type="radio" class="btn btn-default" value="2"> Third</label>
+  <label class="btn btn-default">
+    <input type="radio" class="btn btn-default" value="0">All
+  </label>
+  <label class="btn btn-default">
+    <input type="radio" class="btn btn-default" value="1">Active
+  </label>
+  <label class="btn btn-default">
+    <input type="radio" class="btn btn-default" value="2">Completed
+  </label>
   <!-- Children get compiled by `bs-radio-group` to :
   <label class="btn btn-default"><input type="radio" class="btn btn-default" value="left" ng-model="button.radio" bs-radio> Left</label>
   ...

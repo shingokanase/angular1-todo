@@ -4,6 +4,9 @@
 /// <reference path="../typings/index.d.ts" />
 
 import "./App";
+
 import "./components/todo/TodoComponent";
 import "./components/todo/TodoController";
 import "./components/todo/TodoTemplate.html";
+
+import "./services/sharedService/CacheSharedService.ts";

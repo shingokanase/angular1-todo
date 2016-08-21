@@ -1,24 +1,33 @@
 "use strict";
 
+/**
+ *
+ */
 export class TodoController {
 
+  private item;
   private todoItems;
 
-  constructor(private $scope) {
+  constructor(
+    private $scope,
+    private cacheSheredService
+  ) {
     this.refresh()
   }
 
   private refresh() {
     console.log("refresh");
-
-    this.todoItems = ['あ', 'い', 'う', 'え', 'お'];
+    this.todoItems = this.cacheSheredService.todoItems;
   }
 
-  public click() {
+  public addItem() {
 
+    console.log(this.item);
+
+    this.todoItems.push(this.item);
     console.log("ボタンクリック");
 
   }
 }
 
-angular.module('app').controller('TodoController', ['$scope', TodoController]);
+angular.module('app').controller('TodoController', ['$scope', 'CacheSharedService', TodoController]);

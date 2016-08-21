@@ -1,5 +1,8 @@
 "use strict";
 
+/**
+ *
+ */
 export class TodoComponent implements ng.IComponentOptions {
 
   public controller = "TodoController";
