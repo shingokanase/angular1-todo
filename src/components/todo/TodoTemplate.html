@@ -1,5 +1,4 @@
 <div>
-
   <div class="input-group">
   <input type="text" class="form-control" placeholder="テキスト入力欄" ng-model="todo.item">
   <span class="input-group-btn">
@@ -8,9 +7,13 @@
 </div>
 
 <ul class="list-group">
-  <li ng-model="todo.todoItems" class="list-group-item" ng-repeat="item in todo.todoItems">{{item}}</li>
+  <li ng-model="todo.todoItems" class="list-group-item" ng-repeat="item in todo.todoItems track by $index">{{item}}
+    <span class="btn btn-default"><span class="glyphicon glyphicon-remove" style="color: #F00" aria-hidden="true"></span></span>
+  </li>
 </ul>
+
 <span class="badge large" ng-model="todo.todoItems">{{todo.todoItems.length}} items</span>
+
 <div class="btn-group" ng-model="button.radio" bs-radio-group>
   <label class="btn btn-default">
     <input type="radio" class="btn btn-default" value="0">All
@@ -21,8 +24,4 @@
   <label class="btn btn-default">
     <input type="radio" class="btn btn-default" value="2">Completed
   </label>
-  <!-- Children get compiled by `bs-radio-group` to :
-  <label class="btn btn-default"><input type="radio" class="btn btn-default" value="left" ng-model="button.radio" bs-radio> Left</label>
-  ...
-  -->
 </div>

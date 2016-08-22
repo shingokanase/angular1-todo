@@ -9,4 +9,4 @@ export class CacheSharedService {
 
 }
 
-angular.module('app').service('CacheSharedService', CacheSharedService);
+angular.module('app').service('CacheSharedService', [CacheSharedService]);

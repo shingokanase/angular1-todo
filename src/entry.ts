@@ -5,8 +5,11 @@
 
 import "./App";
 
+import "./components/base/BaseController";
+
 import "./components/todo/TodoComponent";
 import "./components/todo/TodoController";
-import "./components/todo/TodoTemplate.html";
+import "./components/todo/TodoTemplate";
 
-import "./services/sharedService/CacheSharedService.ts";
+import "./services/sharedService/CacheSharedService";
+import "./services/sharedService/MessageSharedService";
