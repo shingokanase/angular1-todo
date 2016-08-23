@@ -11,9 +11,20 @@ export class MessageSharedService {
 
   }
 
-  public send() {
-    console.log('message');
-    this.$rootScope.$broadcast('refresh');
+  /**
+   *
+   */
+  public send(message: string): void {
+
+    switch (message) {
+      case 'all':
+          console.log(`message: ${message}`);
+          this.$rootScope.$broadcast('refresh');
+        break;
+      default:
+        break;
+    }
+
   }
 
 

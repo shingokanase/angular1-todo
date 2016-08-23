@@ -1,27 +1,33 @@
 <div>
   <div class="input-group">
-  <input type="text" class="form-control" placeholder="テキスト入力欄" ng-model="todo.item">
+  <input type="text" class="form-control" placeholder="テキスト入力欄" ng-model="todo.message">
   <span class="input-group-btn">
     <button type="button" class="btn btn-default" ng-click="todo.addItem('')">Add</button>
   </span>
 </div>
 
 <ul class="list-group">
-  <li ng-model="todo.todoItems" class="list-group-item" ng-repeat="item in todo.todoItems track by $index">{{item}}
-    <span class="btn btn-default"><span class="glyphicon glyphicon-remove" style="color: #F00" aria-hidden="true"></span></span>
+  <li ng-model="todo" class="list-group-item" ng-repeat="item in todo.todoItems track by $index">
+    <span class="btn btn-default" ng-click="todo.doneItem($index)">
+      <span class="glyphicon glyphicon-ok" style="color: #00F" aria-hidden="true"></span>
+    </span>
+    {{item}}
+    <span class="btn btn-default" ng-click="todo.deleteItem($index)">
+      <span class="glyphicon glyphicon-remove" style="color: #F00" aria-hidden="true"></span>
+    </span>
   </li>
 </ul>
 
 <span class="badge large" ng-model="todo.todoItems">{{todo.todoItems.length}} items</span>
 
-<div class="btn-group" ng-model="button.radio" bs-radio-group>
-  <label class="btn btn-default">
-    <input type="radio" class="btn btn-default" value="0">All
+<div class="btn-group" ng-model="todo.radio" bs-radio-group>
+  <label class="btn btn-default active">
+    <input type="radio" class="btn btn-default" value="0" ng-change="todo.change()">All
   </label>
   <label class="btn btn-default">
-    <input type="radio" class="btn btn-default" value="1">Active
+    <input type="radio" class="btn btn-default" value="1" ng-change="todo.change()">Active
   </label>
   <label class="btn btn-default">
-    <input type="radio" class="btn btn-default" value="2">Completed
+    <input type="radio" class="btn btn-default" value="2" ng-change="todo.change()">Completed
   </label>
 </div>

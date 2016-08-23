@@ -11,7 +11,7 @@ export class BaseController {
     $scope.$on('refresh', () => {this.refresh()});
   }
 
-  protected refresh() {
+  protected refresh(): void {
   }
 
 }
